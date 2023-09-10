@@ -9,7 +9,7 @@
 }
 
 /* Dark Mode */
-/*@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
 	:root {
 		--bg: black;
 		--text: white;
@@ -17,7 +17,7 @@
 		--article: #616161;
 		--article2: #0007;
 	}
-}*/
+}
 
 
 html,
