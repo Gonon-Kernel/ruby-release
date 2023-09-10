@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@300&display=swap");
+
+:root {
+	--bg: white;
+	--text: black;
+	--accent: black;
+	--article: #EEEEEE;
+	--article2: #fff7;
+}
+
+/* Dark Mode */
+/*@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: black;
+		--text: white;
+		--accent: white;
+		--article: #616161;
+		--article2: #0007;
+	}
+}*/
+
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Geologica';
+	color: var(--text);
+	background: var(--bg);
+}
+
+h2 {
+	padding-top: 2rem
+}
+
+a {
+	text-decoration: none;
+	color: var(--accent);
+	font-weight: bold;
+}
+h2 a{
+	position: absolute;
+	left: 5%;
+}
+
+li {
+	margin: 1rem 0
+}
+
+li:before {
+	content: "- "
+}
+
+@media (min-width: 768px),
+(orientation:landscape) {
+	body {
+		padding: 1rem 20vw
+	}
+}
+
+@keyframes slide {
+	from {
+		opacity: 0;
+		transform: scale(2) translateY(100%);
+	}
+}
+
