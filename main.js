@@ -2,7 +2,7 @@ function linksGenerator() {
 	function anchor(displayName, linkName, variant) {
 		const anchorTag = document.createElement('a');
 		anchorTag.textContent = displayName;
-		anchorTag.href = `https://github.com/Gonon-Kernel/ruby-release/releases/download/${linkName}/GononKernel-${linkName}${variant}-ruby-Stable-?.zip`;
+		anchorTag.href = `https://github.com/Gonon-Kernel/ruby-release/releases/download/version/GononKernel-version${variant}-ruby-Stable-date.zip`;
 		return anchorTag;
 	}
 	const linkSpan = document.createElement('span');
@@ -117,11 +117,15 @@ customElements.define('release-item', class extends HTMLElement {
 
 
 	connectedCallback() {
-		this.shadowRoot.querySelectorAll('p')[0].textContent = this.dataset.version;
+		this.shadowRoot.querySelectorAll('p')[0].textContent = this.dataset.name;
 		this.shadowRoot.querySelectorAll('p')[1].textContent = this.dataset.date.slice(0, -5);
 		const links = this.shadowRoot.querySelectorAll('a');
+		let strObj = {
+			version: this.dataset.version,
+			date: this.dataset.date
+		}
 		for (const link of links)
-			link.href = link.href.replace('?', this.dataset.date);
+			link.href = link.href.replace(/version|date/gi, function(matched) {return strObj[matched];}) ;
 
 	}
 
